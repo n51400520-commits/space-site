@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ғарыш саяхаты — Портфолио</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Звёздный фон -->
+  <div class="stars"></div>
+
+  <header>
+    <h1>🚀 Ғарыш саяхаты</h1>
+    <nav>
+      <button onclick="showSection('hero')">Планеталар</button>
+      <button onclick="showSection('projects')">Жобалар</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Орбитальные планеты -->
+    <section id="hero">
+      <h2>Планеталар</h2>
+      <p>Менің жобаларым — әр планета сияқты өз орбитасында.</p>
+      <div class="orbit"></div>
+    </section>
+
+    <!-- Жобалар -->
+    <section id="projects" style="display:none;">
+      <h2>Жобалар</h2>
+      <div class="filters">
+        <button data-filter="all" class="active">Барлығы</button>
+        <button data-filter="frontend">Фронтенд</button>
+        <button data-filter="design">Дизайн</button>
+        <button data-filter="games">Ойындар</button>
+      </div>
+      <div class="cards" id="projectCards"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026. Байланыс: <a href="mailto:you@example.com">you@example.com</a></p>
+  </footer>
+
+  <!-- Модалка -->
+  <dialog id="projectModal">
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <button id="modalClose">Жабу</button>
+  </dialog>
+
+  <script src="script.js" defer></script>
+  <script>
+    // Переключение секций с view-transition
+    function showSection(id) {
+      const section = document.getElementById(id);
+      if (!section) return;
+      if (document.startViewTransition) {
+        document.startViewTransition(() => {
+          document.querySelectorAll("main section").forEach(s => s.style.display = "none");
+          section.style.display = "block";
+        });
+      } else {
+        document.querySelectorAll("main section").forEach(s => s.style.display = "none");
+        section.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
