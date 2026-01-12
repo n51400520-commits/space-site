@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalDesc = document.getElementById('modalDesc');
   const modalClose = document.getElementById('modalClose');
 
-  // Орбитальные планеты
+
   planets.forEach(p => {
     const item = document.createElement('div');
     item.className = `planet ${p.class}`;
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     orbit.appendChild(item);
   });
 
-  // Модалка
+
   function openProjectModal(id) {
     const pr = projects.find(p => p.id === id);
     if (!pr) return;
