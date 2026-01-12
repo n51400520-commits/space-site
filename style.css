@@ -6,7 +6,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Звёздный фон */
+
 .stars {
   position: fixed;
   inset: 0;
@@ -19,7 +19,7 @@ body {
   to   { background-position: 1000px 1000px; }
 }
 
-/* Орбита */
+
 .orbit {
   position: relative;
   width: 500px;
@@ -41,7 +41,7 @@ body {
   border-radius: 50%;
 }
 
-/* Анимации орбит */
+
 .mercury { animation: orbit-mercury 6s linear infinite; }
 .venus   { animation: orbit-venus 10s linear infinite; }
 .earth   { animation: orbit-earth 14s linear infinite; }
