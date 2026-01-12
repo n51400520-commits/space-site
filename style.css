@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Звёздный фон */
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url('assets/stars.png') repeat;
+  animation: moveStars 60s linear infinite;
+}
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to   { background-position: 1000px 1000px; }
+}
+
+/* Орбита */
+.orbit {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  border-radius: 50%;
+}
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  cursor: pointer;
+}
+.planet img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* Анимации орбит */
+.mercury { animation: orbit-mercury 6s linear infinite; }
+.venus   { animation: orbit-venus 10s linear infinite; }
+.earth   { animation: orbit-earth 14s linear infinite; }
+.mars    { animation: orbit-mars 18s linear infinite; }
+
+@keyframes orbit-mercury {
+  from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+@keyframes orbit-venus {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+@keyframes orbit-earth {
+  from { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+}
+@keyframes orbit-mars {
+  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+/* Фильтр и карточки */
+.filters {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.filters button {
+  padding: 8px 12px;
+  background: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.filters button.active {
+  background: #7dd3fc;
+  color: #0b0f1a;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.card {
+  background: #121826;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Модалка */
+dialog {
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #1f2937;
+  color: white;
+}
